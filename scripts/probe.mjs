@@ -1,0 +1,25 @@
+import { chromium } from 'playwright-core';
+const browser = await chromium.launch({ executablePath: '/usr/bin/chromium', args: ['--no-sandbox'] });
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+await page.goto('http://localhost:3100/', { waitUntil: 'networkidle' });
+await page.addStyleTag({ content: 'html{scroll-behavior:auto!important}' });
+const go = async (y, f) => { await page.evaluate(v => scrollTo(0, v), y); await page.waitForTimeout(350); await page.screenshot({ path: `shots/${f}.png` }); };
+const fin = await page.evaluate(() => { const e = document.querySelector('#join'); return e.offsetTop; });
+const iv = await page.evaluate(() => document.querySelectorAll('[data-scene]')[11].offsetTop);
+await go(iv - 100, 'iv');
+for (const t of [0.15, 0.4, 0.7, 0.98]) await go(fin + t * 3 * 900, `fin-${t}`);
+// hover on poster
+await go(22.1 * 900 + 0.0 * 900 + 2 * 900 * 0, 'p0');
+await page.evaluate(() => scrollTo(0, 2210 * 9 + 0));
+await page.waitForTimeout(300);
+await page.mouse.move(700, 450); await page.waitForTimeout(300);
+await page.screenshot({ path: 'shots/hover.png' });
+await page.mouse.move(1000, 23); await page.waitForTimeout(400);
+await page.screenshot({ path: 'shots/navhover.png', clip: { x: 700, y: 0, width: 740, height: 60 } });
+console.log('prog', await page.evaluate(() => getComputedStyle(document.querySelector('[data-root]')).getPropertyValue('--prog')), 'height', await page.evaluate(() => document.documentElement.scrollHeight));
+await page.setViewportSize({ width: 390, height: 800 });
+await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(300);
+const hs = await page.evaluate(() => document.documentElement.scrollWidth);
+console.log('mobile scrollWidth', hs);
+await go(2210 * 8 / 100 * 100 / 100 * 0 + 24 * 800 * 0 + (await page.evaluate(() => document.querySelector('#productions').offsetTop)) + 400, 'm-posters');
+await browser.close();

@@ -1,0 +1,10 @@
+import { chromium } from 'playwright-core';
+const b = await chromium.launch({ executablePath: '/usr/bin/chromium', args: ['--no-sandbox'] });
+const p = await b.newPage({ viewport: { width: 360, height: 740 }, isMobile: true, hasTouch: true });
+await p.goto('http://localhost:3200/', { waitUntil: 'networkidle' });
+console.log('scrollWidth@360', await p.evaluate(() => document.documentElement.scrollWidth));
+await p.tap('text=MENU'); await p.waitForTimeout(500); await p.screenshot({ path: 'shots/menu-open.png' });
+await p.tap('#m-sheet a:has-text("Productions")'); await p.waitForTimeout(1500);
+console.log('after tap: y', await p.evaluate(() => Math.round(scrollY)), 'sheet hidden', await p.evaluate(() => getComputedStyle(document.querySelector('#m-sheet')).visibility));
+await p.screenshot({ path: 'shots/menu-after.png' });
+await b.close();

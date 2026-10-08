@@ -1,0 +1,37 @@
+:root{
+  --charcoal:#151515; --paper:#F1E8D5; --warm:#FFF8EA; --crimson:#A51C30; --red:#D4382F;
+  --amber:#E8A83E; --tungsten:#F4B860; --blue:#315CFF; --deep-blue:#182A4A; --green:#34483D; --beige:#EADFC8;
+  --anton:var(--font-anton),'Anton',Impact,sans-serif;
+  --archivo:var(--font-archivo),'Archivo',sans-serif;
+  --serif:var(--font-serif),'Instrument Serif',serif;
+  --elite:var(--font-elite),'Special Elite',monospace;
+  --hand:var(--font-hand),'Caveat',cursive;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:#151515}
+a{color:#E8A83E;text-decoration:none}
+a:hover{color:#F4B860}
+::selection{background:#D4382F;color:#FFF8EA}
+
+/* scene scroll variables — written by ScrollEngine; safe defaults for SSR / off-screen scenes */
+[data-scene]{--p:0;--t:0;--a:0;--b:0}
+
+/* hover colours (replaces the prototype's style-hover) */
+.hl{--c:var(--c0);--bc:var(--b0,currentColor)}
+.hl:hover{--c:var(--c1);--bc:var(--b1,currentColor)}
+
+@keyframes drift{0%{transform:translate(0,0);opacity:0}20%{opacity:.9}100%{transform:translate(30px,-120px);opacity:0}}
+@keyframes wave{0%,100%{transform:scaleX(1) scaleY(.9)}50%{transform:scaleX(1.5) scaleY(1.12)}}
+@keyframes ring{0%{transform:translate(-50%,-50%) scale(.3);opacity:.9}100%{transform:translate(-50%,-50%) scale(2.2);opacity:0}}
+@keyframes expr{0%,30%{opacity:1}33%,100%{opacity:0}}
+@keyframes scan{0%{left:-10%}100%{left:110%}}
+@keyframes frame{0%,100%{transform:scale(1)}50%{transform:scale(.92)}}
+@keyframes jit{0%,100%{transform:translate(0,0) rotate(var(--r,0deg))}25%{transform:translate(6px,-8px) rotate(calc(var(--r,0deg) + 2deg))}50%{transform:translate(-9px,5px) rotate(calc(var(--r,0deg) - 3deg))}75%{transform:translate(4px,9px) rotate(calc(var(--r,0deg) + 1deg))}}
+@keyframes flick{0%,100%{opacity:1}47%{opacity:1}50%{opacity:.55}53%{opacity:1}}
+@keyframes arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(7px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+/* perf: scroll-driven elements get their own compositor layer; offscreen scenes stop animating */
+[style*="var(--p)"]:not([data-scene]),[style*="var(--t)"]:not([data-scene]),
+[style*="var(--a)"]:not([data-scene]),[style*="var(--b)"]:not([data-scene]){will-change:transform}
+[data-scene][data-off] *{animation-play-state:paused!important}
