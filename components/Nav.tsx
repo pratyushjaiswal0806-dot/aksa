@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { CSS } from '@/lib/css';
 import MobileMenu from './MobileMenu';
 
@@ -20,7 +21,10 @@ export default function Nav() {
         backdropFilter: 'blur(6px)', borderBottom: '1px solid var(--navc)',
       } as CSS}
     >
-      <a href="#top" style={{ fontFamily: 'var(--anton)', fontSize: 22, letterSpacing: '.14em', color: '#F1E8D5' }}>AKSA</a>
+      {/* The logo's black JPEG background drops out under screen blend, so the mark sits on the bar with no box */}
+      <a href="#top" style={{ display: 'flex', alignItems: 'center' }}>
+        <Image src="/brand/aksa-logo.webp" alt="AKSA Theatre Team" width={479} height={513} loading="eager" style={{ height: 38, width: 'auto', mixBlendMode: 'screen' }} />
+      </a>
       <div data-links className="m-hide" style={{ position: 'relative', display: 'flex', gap: 'clamp(10px,2.4vw,34px)', height: '100%', alignItems: 'center' }}>
         {LINKS.map(l => (
           <a
