@@ -5,7 +5,6 @@ const LINKS = [
   { key: 'about', label: 'ABOUT', color: '#E8A83E', hover: '#E8A83E' },
   { key: 'disciplines', label: 'DISCIPLINES', color: '#315CFF', hover: '#7F9BFF' },
   { key: 'productions', label: 'PRODUCTIONS', color: '#D4382F', hover: '#D4382F' },
-  { key: 'people', label: 'PEOPLE', color: '#FFF8EA', hover: '#FFF8EA' },
   { key: 'join', label: 'JOIN', color: '#F4B860', hover: '#F4B860' },
 ] as const;
 

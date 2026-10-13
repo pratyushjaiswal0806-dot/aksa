@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Anton, Archivo, Caveat, Instrument_Serif, Special_Elite } from 'next/font/google';
 import './globals.css';
 import './mobile.css';
+import Loader from '@/components/Loader';
 
 const anton = Anton({ weight: '400', subsets: ['latin'], variable: '--font-anton', display: 'swap' });
 const archivo = Archivo({ weight: ['400', '600', '800'], subsets: ['latin'], variable: '--font-archivo', display: 'swap' });
@@ -18,7 +19,10 @@ export const viewport: Viewport = { width: 'device-width', initialScale: 1, them
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={[anton, archivo, caveat, serif, elite].map(f => f.variable).join(' ')}>
-      <body>{children}</body>
+      <body>
+        <Loader />
+        {children}
+      </body>
     </html>
   );
 }

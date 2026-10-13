@@ -5,7 +5,7 @@ import type { CSS } from '@/lib/css';
 
 const LINKS = [
   ['about', 'About', '#E8A83E'], ['disciplines', 'Disciplines', '#315CFF'], ['productions', 'Productions', '#D4382F'],
-  ['people', 'People', '#FFF8EA'], ['join', 'Join', '#F4B860'],
+  ['join', 'Join', '#F4B860'],
 ] as const;
 
 /** Phone-only nav: a MENU button + full-screen link sheet. Hidden ≥760px via CSS (.m-only). */

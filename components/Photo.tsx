@@ -27,14 +27,14 @@ export default function Photo({
   id, bg, label, labelStyle, sizes = '(max-width: 760px) 80vw, 40vw',
   priority = false, style, className, children, stripe,
 }: Props) {
-  const { src, alt } = PHOTOS[id];
+  const { src, alt, pos } = PHOTOS[id];
   return (
     <div className={className} style={{ position: 'absolute', ...style }} data-photo={id}>
       {src ? (
         <Image
           src={src} alt={alt} fill sizes={sizes}
           loading={priority ? 'eager' : 'lazy'} priority={priority}
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', objectPosition: pos }}
         />
       ) : (
         <>

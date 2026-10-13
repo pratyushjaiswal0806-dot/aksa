@@ -9,7 +9,7 @@ const y = (k: number) => `translateY(calc(var(--p)*${k}vh))`;
 
 export default function About() {
   return (
-    <section id="about" data-scene data-nav="about" data-act="1" style={{ position: 'relative', height: '190vh', background: '#F1E8D5', overflow: 'hidden' }}>
+    <section id="about" data-scene data-nav="about" data-act="1" style={{ position: 'relative', zIndex: 1, height: '190vh', marginTop: '-100vh', background: '#F1E8D5', overflow: 'hidden', boxShadow: '0 -24px 60px rgba(0,0,0,.55)' }}>
       <div style={{ ...abs, inset: 0, background: 'radial-gradient(ellipse 50% 40% at 85% 10%,rgba(244,184,96,.5),transparent 70%),radial-gradient(ellipse 40% 50% at 0% 100%,rgba(49,92,255,.12),transparent 70%)' }} />
       <div style={{ ...abs, inset: 0, backgroundImage: 'linear-gradient(rgba(24,42,74,.08) 1px,transparent 1px)', backgroundSize: '100% 34px', transform: y(-8) }} />
 

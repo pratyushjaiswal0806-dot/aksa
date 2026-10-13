@@ -39,11 +39,11 @@ export default function BreakGrid() {
             <Tape style={{ left: '30%', top: -17, width: 70, height: 24, transform: `rotate(${c.tape})` }} />
           </Photo>
         ))}
-        <div style={tag({ left: '30vw', top: '20vh', color: '#151515', background: '#F4B860', padding: '4px 8px', transform: 'translateY(calc(var(--a)*-14vh))' })}>SCENE 04</div>
+        <div className="bg-tag1" style={tag({ left: '30vw', top: '20vh', color: '#151515', background: '#F4B860', padding: '4px 8px', transform: 'translateY(calc(var(--a)*-14vh))' })}>SCENE 04</div>
         <div style={tag({ left: '62vw', top: '48vh', color: '#FFF8EA', background: '#151515', padding: '4px 8px', transform: 'translateY(calc(var(--a)*-20vh))' })}>TAKE 03</div>
         <div className="bg-tag3" style={tag({ left: '8vw', top: '70vh', color: '#151515', border: '1px solid #151515', padding: '4px 8px', transform: 'translateY(calc(var(--a)*-18vh))' })}>REHEARSAL 22:14</div>
         <div style={tag({ left: '46vw', top: '80vh', fontFamily: 'var(--hand)', fontSize: 30, letterSpacing: 0, color: '#D4382F', transform: 'rotate(-6deg) translateY(calc(var(--a)*-22vh))' })}>take again ↻</div>
-        <div style={tag({ right: '4vw', top: '14vh', color: '#315CFF', transform: 'translateY(calc(var(--a)*-10vh))' })}>LIGHTING · BACKSTAGE</div>
+        <div className="bg-tag5" style={tag({ right: '4vw', top: '14vh', color: '#315CFF', transform: 'translateY(calc(var(--a)*-10vh))' })}>LIGHTING · BACKSTAGE</div>
       </div>
     </section>
   );

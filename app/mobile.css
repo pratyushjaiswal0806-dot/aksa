@@ -10,7 +10,7 @@
   nav a[href="#top"]{font-size:20px!important}
 
   /* HERO */
-  .hero-tag{letter-spacing:.2em!important;font-size:10px!important;line-height:1.8;padding:0 8vw}
+  .hero-tag{letter-spacing:.2em!important;font-size:10px!important;line-height:1.8;padding:0 8vw;text-wrap:balance}
 
   /* ABOUT */
   .ab-p1{left:-6vw!important;top:8vh!important;width:56vw!important;height:40vw!important;border-width:6px!important}
@@ -23,7 +23,7 @@
   .ab-wings{right:-8vw!important;top:138vh!important;width:56vw!important;height:38vw!important}
 
   /* MANIFESTO */
-  .mf-photo{right:4vw!important;top:11vh!important;width:38vw!important;height:52vw!important;border-width:6px!important}
+  .mf-photo{right:4vw!important;top:15vh!important;width:38vw!important;height:52vw!important;border-width:6px!important}
   .mf-perform{font-size:30vw!important;margin-top:calc(-.5*30vw + 6vh)!important}
   .mf-become{font-size:16vw!important;margin-top:-6vw!important}
 
@@ -35,50 +35,44 @@
   .di-photo{left:6vw!important;top:9vh!important;width:88vw!important;height:40vh!important;border-width:7px!important}
   .di-acting{left:6vw!important;right:6vw!important;top:52vh!important}
   .di-look{white-space:normal!important;text-align:center;width:34vw;font-size:10px!important;letter-spacing:.14em!important;line-height:1.7}
-  .di-laugh{right:4vw!important;top:6vh!important;width:50vw!important;height:30vh!important}
+  .di-actually{right:6vw!important;bottom:19vh!important}
+  .di-laugh{right:4vw!important;top:11vh!important;width:50vw!important;height:30vh!important}
 
   /* BREAK THE GRID — 3×3 landing grid, scatter stays loose */
   .bg-c{width:28vw!important;height:30vw!important;border-width:5px!important}
-  .bg-c0{--sx:3vw;--sy:10vh;--gx:3vw;--gy:9vh}
-  .bg-c1{--sx:60vw;--sy:72vh;--gx:36vw;--gy:9vh}
-  .bg-c2{--sx:35vw;--sy:6vh;--gx:69vw;--gy:9vh}
-  .bg-c3{--sx:62vw;--sy:24vh;--gx:3vw;--gy:25vh}
-  .bg-c4{--sx:66vw;--sy:6vh;--gx:36vw;--gy:25vh}
-  .bg-c5{--sx:4vw;--sy:70vh;--gx:69vw;--gy:25vh}
+  .bg-c0{--sx:3vw;--sy:10vh;--gx:3vw;--gy:12vh}
+  .bg-c1{--sx:60vw;--sy:72vh;--gx:36vw;--gy:12vh}
+  .bg-c2{--sx:35vw;--sy:6vh;--gx:69vw;--gy:12vh}
+  .bg-c3{--sx:62vw;--sy:24vh;--gx:3vw;--gy:28vh}
+  .bg-c4{--sx:66vw;--sy:6vh;--gx:36vw;--gy:28vh}
+  .bg-c5{--sx:4vw;--sy:70vh;--gx:69vw;--gy:28vh}
   .bg-c6{--sx:33vw;--sy:22vh;--gx:3vw;--gy:64vh}
   .bg-c7{--sx:35vw;--sy:76vh;--gx:36vw;--gy:64vh}
   .bg-c8{--sx:8vw;--sy:27vh;--gx:69vw;--gy:64vh}
   .bg-tag3{display:none}
+  .bg-tag1{top:26vh!important}
+  .bg-tag5{top:21vh!important}
   .bg-h1{margin-top:-9vh!important}
   .bg-h2{font-size:12vw!important;margin-top:-5vh!important;padding:0 4vw}
 
   /* BACKSTAGE WALL */
   .bw-shoe{left:28vw!important;top:46vh!important;font-size:28px!important}
-  .bw-cue{left:5vw!important;top:90vh!important;width:52vw!important}
+  .bw-cue{left:5vw!important;top:90vh!important;width:48vw!important}
   .bw-dress{left:40vw!important;top:66vh!important;width:54vw!important;height:38vw!important}
+  .bw-note{top:162vh!important;padding-right:4vw}
+  .bw-tape{left:10vw!important;top:130vh!important}
+  .bw-arrow{left:44vw!important;top:128vh!important}
   .bw-cost{right:3vw!important;top:106vh!important;width:40vw!important;height:52vw!important}
 
   /* REDEMPTION */
   .rd-fragment1{left:4vw!important;top:13vh!important;width:46vw!important;height:24vh!important}
   .rd-fragment2{right:4vw!important;top:20vh!important;width:38vw!important;height:30vh!important}
-  .rd-fragment3{left:40vw!important;top:10vh!important;width:30vw!important;height:13vh!important}
+  .rd-fragment3{left:6vw!important;top:39vh!important;width:40vw!important;height:12vh!important}
+  .rd-exhibit{bottom:28vh!important}
+  .rd-stamp{bottom:21vh!important}
   .rd-label{left:4vw!important;right:4vw;font-size:10px!important;letter-spacing:.14em!important}
   .rd-title{font-size:17.5vw!important}
   .rd-foot{flex-direction:column;gap:8px!important;bottom:2vh!important}
-
-  /* FULL-BLEED BREAK — phrases wrap into stacked lines instead of running off-screen */
-  .fb-cap{white-space:normal!important;width:80vw;text-align:center;top:22vh!important}
-  .fb-a{font-size:15vw!important;top:32vh!important;white-space:normal!important;width:92vw;transform:translateX(calc(var(--p)*-8vw + 4vw))!important}
-  .fb-b{font-size:15vw!important;top:calc(32vh + 28vw)!important;white-space:normal!important;width:92vw;transform:translateX(calc(var(--p)*8vw + 4vw))!important}
-
-  /* PEOPLE */
-  .pp-ph{top:12vh!important;width:68vw!important;height:62vh!important}
-  .pp-ph1,.pp-ph3{left:4vw!important}
-  .pp-ph2{right:4vw!important}
-  .pp-n1{left:18vw!important;top:20vh!important}
-  .pp-n2{top:22vh!important}
-  .pp-n3{left:20vw!important;top:30vh!important}
-  .pp-cast{top:84px!important}
 
   /* INTERVAL */
   .interval-grid{grid-template-columns:minmax(0,1fr)!important;gap:5vh!important}

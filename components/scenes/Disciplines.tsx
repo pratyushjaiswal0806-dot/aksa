@@ -66,8 +66,8 @@ export default function Disciplines() {
           <div style={{ ...abs, left: '6vw', top: '22vh', fontFamily: 'var(--elite)', fontSize: 'clamp(50px,13vw,220px)', lineHeight: 1, color: '#151515', textTransform: 'uppercase' }}>Scri<s style={{ textDecorationColor: '#D4382F', textDecorationThickness: '.06em' }}>b</s>pting</div>
           <div style={{ ...hand, left: '20vw', top: '12vh', fontSize: 'clamp(26px,3vw,46px)', color: '#D4382F', transform: 'rotate(-5deg)' }}>cut the second line ↓</div>
           <div style={{ ...abs, right: '6vw', top: '42vh', maxWidth: '30vw', fontFamily: 'var(--elite)', fontSize: 'clamp(13px,1.4vw,20px)', lineHeight: 1.6, color: '#151515' }}><span style={{ background: '#F4B860' }}>Every line is a decision.</span> Every pause is a line.</div>
-          <div style={{ ...hand, left: '8vw', bottom: '10vh', fontSize: 'clamp(28px,3.4vw,54px)', color: '#315CFF', transform: 'rotate(-3deg) translateX(calc(var(--t)*4vw))' }}>say less. mean more. →</div>
-          <div style={{ ...hand, right: '8vw', bottom: '9vh', fontSize: 'clamp(28px,3vw,48px)', color: '#D4382F', transform: 'rotate(4deg)' }}>&quot;actually&quot; ✗ ✗ ✗</div>
+          <div className="di-say" style={{ ...hand, left: '8vw', bottom: '10vh', fontSize: 'clamp(28px,3.4vw,54px)', color: '#315CFF', transform: 'rotate(-3deg) translateX(calc(var(--t)*4vw))' }}>say less. mean more. →</div>
+          <div className="di-actually" style={{ ...hand, right: '8vw', bottom: '9vh', fontSize: 'clamp(28px,3vw,48px)', color: '#D4382F', transform: 'rotate(4deg)' }}>&quot;actually&quot; ✗ ✗ ✗</div>
           <Tape style={{ left: '46vw', bottom: '14vh', width: 90, height: 26, transform: 'rotate(-8deg)' }} />
         </div>
 

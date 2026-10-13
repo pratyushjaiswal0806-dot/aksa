@@ -20,18 +20,28 @@ a:hover{color:#F4B860}
 .hl{--c:var(--c0);--bc:var(--b0,currentColor)}
 .hl:hover{--c:var(--c1);--bc:var(--b1,currentColor)}
 
+/* the finale's registration button: a solid block (no pill), echoing the title's crimson drop shadow.
+   Hover sets color too, because a:hover would otherwise turn the amber label amber-on-amber. */
+.join-cta{background:#F4B860;color:#151515;box-shadow:0 0 40px rgba(244,184,96,.45),0 6px 0 #A51C30;transition:background .25s,box-shadow .25s}
+.join-cta:hover{background:#FFF8EA;color:#151515;box-shadow:0 0 60px rgba(244,184,96,.7),0 6px 0 #A51C30}
+
 @keyframes drift{0%{transform:translate(0,0);opacity:0}20%{opacity:.9}100%{transform:translate(30px,-120px);opacity:0}}
 @keyframes wave{0%,100%{transform:scaleX(1) scaleY(.9)}50%{transform:scaleX(1.5) scaleY(1.12)}}
 @keyframes ring{0%{transform:translate(-50%,-50%) scale(.3);opacity:.9}100%{transform:translate(-50%,-50%) scale(2.2);opacity:0}}
 @keyframes expr{0%,30%{opacity:1}33%,100%{opacity:0}}
-@keyframes scan{0%{left:-10%}100%{left:110%}}
+/* cqw = % of the scene's width (it is a size container), so this matches animating `left` but runs on the compositor */
+@keyframes scan{0%{transform:translateX(-10cqw)}100%{transform:translateX(110cqw)}}
 @keyframes frame{0%,100%{transform:scale(1)}50%{transform:scale(.92)}}
 @keyframes jit{0%,100%{transform:translate(0,0) rotate(var(--r,0deg))}25%{transform:translate(6px,-8px) rotate(calc(var(--r,0deg) + 2deg))}50%{transform:translate(-9px,5px) rotate(calc(var(--r,0deg) - 3deg))}75%{transform:translate(4px,9px) rotate(calc(var(--r,0deg) + 1deg))}}
 @keyframes flick{0%,100%{opacity:1}47%{opacity:1}50%{opacity:.55}53%{opacity:1}}
 @keyframes arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(7px)}}
+@keyframes ld-spot{0%{opacity:.6;transform:scale(.9)}100%{opacity:1;transform:scale(1.05)}}
+@keyframes ld-bar{0%{transform:scaleX(.04)}100%{transform:scaleX(.88)}}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 
-/* perf: scroll-driven elements get their own compositor layer; offscreen scenes stop animating */
-[style*="var(--p)"]:not([data-scene]),[style*="var(--t)"]:not([data-scene]),
-[style*="var(--a)"]:not([data-scene]),[style*="var(--b)"]:not([data-scene]){will-change:transform}
-[data-scene][data-off] *{animation-play-state:paused!important}
+/* perf: scroll-driven elements get their own compositor layer, but only in scenes near the viewport
+   ([data-on], set by Root). Promoting every scene at once is ~115 megapixels of layers, which blows the
+   GPU tile budget on first load and leaves parts of the page blank. Offscreen scenes also stop animating. */
+[data-scene][data-on] :is([style*="var(--p)"],[style*="var(--t)"],[style*="var(--a)"],[style*="var(--b)"]){will-change:transform}
+[data-scene]:not([data-on]) *{animation-play-state:paused!important}

@@ -11,8 +11,6 @@ import BreakGrid from '@/components/scenes/BreakGrid';
 import BackstageWall from '@/components/scenes/BackstageWall';
 import Posters from '@/components/scenes/Posters';
 import Redemption from '@/components/scenes/Redemption';
-import FullBleed from '@/components/scenes/FullBleed';
-import People from '@/components/scenes/People';
 import Interval from '@/components/scenes/Interval';
 import Finale from '@/components/scenes/Finale';
 
@@ -31,8 +29,6 @@ export default function Page() {
       <BackstageWall />
       <Posters />
       <Redemption />
-      <FullBleed />
-      <People />
       <Interval />
       <Finale />
     </Root>

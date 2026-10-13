@@ -25,10 +25,10 @@ export default function BackstageWall() {
       </Photo>
       <div className="bw-shoe" style={{ ...hand, left: '46vw', top: '30vh', fontSize: 'clamp(30px,3.6vw,56px)', color: '#9DB5FF', transform: `${y(-44)} rotate(-5deg)` }}>where is the other shoe?!</div>
       <div style={{ ...hand, left: '12vw', top: '60vh', fontSize: 'clamp(28px,3vw,46px)', color: '#F4B860', transform: `${y(-58)} rotate(4deg)`, textDecoration: 'underline wavy #D4382F' }}>5 MIN TO STAGE</div>
-      <div style={{ ...hand, left: '62vw', top: '122vh', fontSize: 70, color: '#D4382F', transform: `${y(-80)} rotate(-12deg)` }}>↖</div>
+      <div className="bw-arrow" style={{ ...hand, left: '62vw', top: '122vh', fontSize: 70, color: '#D4382F', transform: `${y(-80)} rotate(-12deg)` }}>↖</div>
       <div style={{ ...abs, left: '55vw', top: '56vh', fontSize: 11, fontWeight: 800, letterSpacing: '.2em', color: '#151515', background: '#F1E8D5', padding: '4px 8px', transform: y(-30) }}>19:58:03</div>
-      <Tape style={{ left: '28vw', top: '132vh', width: 150, height: 30, background: 'rgba(232,168,62,.95)', transform: `${y(-72)} rotate(-8deg)` }} />
-      <div style={{ ...abs, left: '3vw', top: '150vh', maxWidth: '40ch', fontFamily: 'var(--serif)', fontSize: 'clamp(24px,2.6vw,40px)', lineHeight: 1.15, color: '#F1E8D5', transform: y(-30) }}>Nothing here is random. Every scrap on this wall is a promise someone made to the show.</div>
+      <Tape className="bw-tape" style={{ left: '28vw', top: '132vh', width: 150, height: 30, background: 'rgba(232,168,62,.95)', transform: `${y(-72)} rotate(-8deg)` }} />
+      <div className="bw-note" style={{ ...abs, left: '3vw', top: '150vh', maxWidth: '40ch', fontFamily: 'var(--serif)', fontSize: 'clamp(24px,2.6vw,40px)', lineHeight: 1.15, color: '#F1E8D5', transform: y(-30) }}>Nothing here is random. Every scrap on this wall is a promise someone made to the show.</div>
     </section>
   );
 }
